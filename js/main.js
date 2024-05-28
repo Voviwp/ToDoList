@@ -15,11 +15,11 @@ addTaskButton.addEventListener('click', () => {
 });
 
 taskListElement.addEventListener('click', (event) => {
-  if (event.target.classList.contains('delete-button')) {
+  if (event.target.closest('.delete-button')) {
     const taskId = event.target.closest('.task').dataset.id;
     taskList.removeTask(taskId);
     event.target.closest('.task').remove();
-  } else if (event.target.classList.contains('toggle-button')) {
+  } else if (event.target.closest('.toggle-button')) {
     const taskId = event.target.closest('.task').dataset.id;
     taskList.toggleTaskCompletion(taskId);
     event.target.closest('.task').classList.toggle('completed');
@@ -33,8 +33,8 @@ function addTaskToDOM(task) {
   taskElement.innerHTML = `
     <span>${task.title}</span>
     <div>
-      <button class="toggle-button">Toggle</button>
-      <button class="delete-button">Delete</button>
+      <button class="toggle-button"><i class="fas fa-check"></i></button>
+      <button class="delete-button"><i class="fas fa-trash"></i></button>
     </div>
   `;
   taskListElement.appendChild(taskElement);
@@ -45,7 +45,8 @@ function renderTasks() {
   taskList.tasks.forEach(task => addTaskToDOM(task));
 }
 
-
+// Initial rendering of tasks
 renderTasks();
 
+// Optionally, fetch tasks from API and update DOM
 taskList.fetchTasksFromAPI().then(renderTasks);
