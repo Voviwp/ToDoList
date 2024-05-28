@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #6fb3c1, #a0d1e6); /* Muted Laguna blue gradient */
+    animation: backgroundAnimation 10s infinite alternate; /* Animated background */
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(to right, #6fb3c1, #a0d1e6);
+    }
+    100% {
+        background: linear-gradient(to right, #a0d1e6, #6fb3c1);
+    }
+}
+
+.container {
+    background: linear-gradient(145deg, #ffffff, #e6f2f8); /* Soft gradient for the main box */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 400px;
+    text-align: center; /* Centered text inside the container */
+    animation: fadeIn 1s ease-in; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: #2c3e50; /* Darker shade for the heading */
+    animation: slideDown 1s ease-in-out; /* Slide down animation */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+blockquote {
+    font-style: italic;
+    color: #2c3e50; /* Darker shade for the quote */
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out; /* Smooth border transition on focus */
+}
+
+#todo-input:focus {
+    border-color: #007b83; /* Border color change on focus */
+}
+
+#add-btn {
+    padding: 10px 20px;
+    background: #007b83; /* Muted Laguna blue */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth background and transform transition */
+}
+
+#add-btn:hover {
+    background: #005f63; /* Darker shade for hover */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: #f9f9f9; /* Light background for each item */
+    animation: scaleUpFadeIn 0.5s ease-out; /* Scale-up and fade-in animation for new items */
+}
+
+@keyframes scaleUpFadeIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.todo-item.completed {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.todo-item .complete-btn {
+    background: #007b83; /* Muted Laguna blue */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth background and transform transition */
+}
+
+.todo-item .complete-btn:hover {
+    background: #005f63; /* Darker shade for hover */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.todo-item .delete-btn {
+    background: #c0392b; /* Red color for delete button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth background and transform transition */
+}
+
+.todo-item .delete-btn:hover {
+    background: #a93226; /* Darker red for hover */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+
+
+
